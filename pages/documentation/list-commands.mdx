@@ -153,7 +153,7 @@ Get the value at the specified index of a list.
 
 ### `LRANGE <key> <start> <stop>`
 
-Get a range of values from a list.
+Get a range of values from a list. If the stop is lower than 0, it will be treated as the last element of the list.
 
 #### Example
 
@@ -215,6 +215,8 @@ Remove all occurrences of a value from a list.
 ### `LINSERT <key> <position> <pivot> <value>`
 
 Insert a value before or after a pivot in a list.
+
+The pivot should be the value of an existing element, not the index. If the pivot doesn't exist, the command will still run, but do nothing.
 
 #### Example
 
