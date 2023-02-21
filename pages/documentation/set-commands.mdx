@@ -1,0 +1,138 @@
+# Set commands
+
+These are the commands that are available for sets.
+
+### `SADD <key> <member> [member ...]`
+
+Adds the members to the set stored at key.
+
+If key does not exist, a new set is created before adding the specified members.
+
+### Example
+
+```sh
+> SADD myset hello
+ok
+
+> SADD myset world hi
+ok
+```
+
+### `SMEMBERS <key> [key ...]`
+
+Returns all the members of the set value stored at key.
+
+### Example
+
+```sh
+> SMEMBERS myset
+hello
+world
+hi
+```
+
+### `SREM <key> <member> [member ...]`
+
+Removes the specified members from the set stored at key.
+
+Specified members that are not a member of this set are ignored.
+
+### Example
+
+```sh
+> SREM myset hello
+ok
+
+> SMEMBERS myset
+world
+hi
+```
+
+### `SCARD <key>`
+
+Returns the set cardinality (number of elements) of the set stored at key.
+
+### Example
+
+```sh
+> SCARD myset
+2
+```
+
+### `SDIFF <key> [key ...]`
+
+Returns the members of the set resulting from the difference between the first set and all the successive sets.
+
+### Example
+
+```sh
+> SADD myset1 hello
+ok
+
+> SADD myset1 world
+ok
+
+> SADD myset2 hello
+ok
+
+> SDIFF myset1 myset2
+world
+```
+
+### `SINTER <key> [key ...]`
+
+Returns the members of the set resulting from the intersection of all the given sets.
+
+### Example
+
+```sh
+> SADD myset1 hello
+ok
+
+> SADD myset1 world
+ok
+
+> SADD myset2 hello
+ok
+
+> SINTER myset1 myset2
+hello
+```
+
+### `SISMEMBER <key> <member>`
+
+Returns if member is a member of the set stored at key.
+
+### Example
+
+```sh
+> SADD myset hello
+ok
+
+> SISMEMBER myset hello
+1
+
+> SISMEMBER myset world
+0
+```
+
+### `SUNION <key> [key ...]`
+
+Returns the members of the set resulting from the union of all the given sets.
+
+### Example
+
+```sh
+> SADD myset1 hello
+ok
+
+> SADD myset1 world
+ok
+
+> SADD myset2 hello
+ok
+
+> SUNION myset1 myset2
+hello
+world
+```

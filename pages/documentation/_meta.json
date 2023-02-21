@@ -3,5 +3,6 @@
   "commands": "Commands",
   "basic-commands": "Basic Commands",
   "list-commands": "List Commands",
-  "hash-commands": "Hash Commands"
+  "hash-commands": "Hash Commands",
+  "set-commands": "Set Commands"
 }
