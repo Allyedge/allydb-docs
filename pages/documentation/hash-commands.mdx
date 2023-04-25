@@ -8,7 +8,7 @@ Set the value of a field in a hash. Create a hash if it doesn't exist. Replace t
 
 #### Example
 
-```
+```sh
 > HSET hash field value another_field another_value
 ok
 
@@ -22,7 +22,7 @@ Get the value of a field in a hash. Return nothing if the field doesn't exist.
 
 #### Example
 
-```
+```sh
 # Field exists
 > HGET hash field
 value
@@ -37,7 +37,7 @@ Get all fields and values in a hash.
 
 #### Example
 
-```
+```sh
 > HGETALL hash
 field
 value
@@ -53,7 +53,7 @@ Delete a field in a hash.
 
 #### Example
 
-```
+```sh
 > HDEL hash new_field
 ok
 ```
@@ -64,7 +64,7 @@ Get the number of fields in a hash.
 
 #### Example
 
-```
+```sh
 > HLEN hash
 2
 ```
@@ -75,7 +75,7 @@ Check if a field exists in a hash.
 
 #### Example
 
-```
+```sh
 # Field exists
 > HEXISTS hash field
 1
@@ -91,7 +91,7 @@ Get all fields in a hash.
 
 #### Example
 
-```
+```sh
 > HKEYS hash
 field
 another_field
@@ -103,7 +103,7 @@ Get all values in a hash.
 
 #### Example
 
-```
+```sh
 > HVALS hash
 value
 another_value
