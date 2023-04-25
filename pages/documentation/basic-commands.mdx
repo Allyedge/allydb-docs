@@ -45,6 +45,26 @@ bar
 John Doe
 ```
 
+### `SETNX <key> <value>`
+
+Set the value of a key only if it doesn't exist.
+
+#### Example
+
+```sh
+> SET test hi
+hi
+
+> SETNX test hello
+0
+
+> SETNX secondtest bye
+1
+
+> GET secondtest
+bye
+```
+
 ### `DEL <key>`
 
 Delete a key.
